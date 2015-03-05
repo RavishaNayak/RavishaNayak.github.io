@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 			<script>
-				(function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;js.src="http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js";stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
+				(function(d,s,id)
+				{
+					var js,stags=d.getElementsByTagName(s)[0];
+					if(d.getElementById(id))
+					{
+						return;
+					}
+					js=d.createElement(s);
+					js.id=id;
+					js.src="http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js";
+					stags.parentNode.insertBefore(js,stags);
+				})
+				(document,'script','imdb-rating-api');
+				function httpGet(movieTitle)
+				{
+					var xmlHttp = null;
+					var theUrl = "http://www.imdb.com/xml/find?xml=1&nr=1&tt=on&q="+movieTitle;
+
+					xmlHttp = new XMLHttpRequest();
+					xmlHttp.open( "GET", theUrl, false );
+					xmlHttp.send( null );
+					return xmlHttp.responseText;
+				}				
+				
 			</script>
+
 <html>
+	<head>
+		<style>
+		body  {
+			background-image: url("min_aveng.jpg");
+			background-color: #cccccc;
+		}
+		</style>				
+	</head>
 	<body>
-		<h1>My Favorite movies</h1>
+		<h1>My Favorite movies Ravisha </h1>
 	<td>
 		<tr>
 			<p/>
@@ -15,7 +47,7 @@
 				</a>
 			</span>
 
-			
+			<h3 src="httpGet(\"Dark Knight\")"></hr>
 			<iframe width="420" height="345" src="https://www.youtube.com/v/EgphD_ZO_jI"></iframe>
 		</tr>
 		<tr>		
